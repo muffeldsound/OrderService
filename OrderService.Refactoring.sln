@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Tests", "OrderService.Tests\OrderService.Tests.csproj", "{A124957E-E329-46B9-A811-2FEBCC45892A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{234C75EE-8811-452B-9F68-4436C8C5811C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A124957E-E329-46B9-A811-2FEBCC45892A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A124957E-E329-46B9-A811-2FEBCC45892A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A124957E-E329-46B9-A811-2FEBCC45892A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A124957E-E329-46B9-A811-2FEBCC45892A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234C75EE-8811-452B-9F68-4436C8C5811C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234C75EE-8811-452B-9F68-4436C8C5811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234C75EE-8811-452B-9F68-4436C8C5811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234C75EE-8811-452B-9F68-4436C8C5811C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5F0E00C-5A22-49A6-B284-7BC6F45ECD45}
+	EndGlobalSection
+EndGlobal
