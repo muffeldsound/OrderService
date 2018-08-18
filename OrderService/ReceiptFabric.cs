@@ -3,15 +3,15 @@ using OrderService.ReceiptProviders;
 
 namespace OrderService
 {
-    internal class ReceiptFabric
+    internal class ReceiptProviderFabric
     {
-        internal static IReceipt CreateReceiptProvider(string format)
+        internal static IReceipt CreateReceiptProvider(FileFormat format)
         {
             switch (format)
             {
-                case "html":
+                case FileFormat.Html:
                     return new HtmlReceipt();
-                case "json":
+                case FileFormat.Json:
                     return new JsonReceipt();
                 default:
                     return new TextReceipt();
