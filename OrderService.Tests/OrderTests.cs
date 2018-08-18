@@ -70,5 +70,18 @@ namespace OrderService.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void can_generate_json_receipt_for_motor_super()
+        {
+            var order = new Order("Test Company");
+            order.AddLine(new OrderLine(MotorSuper, 1));
+            var actual = order.GenerateReceipt("json");
+
+            var expected =
+                "{    order-receipt-for: 'Test Company',{quantity:1,product-type: Car Insurance,product:{name: Super, price: kr 2 000,00}}    subtotal: kr 2 000,00,    mva: kr 500,00,    total: kr 2 500,00}";
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
