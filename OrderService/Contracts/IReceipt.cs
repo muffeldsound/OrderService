@@ -1,6 +1,6 @@
 ﻿namespace OrderService.Contracts
 {
-    interface IReciept
+    interface IReceipt
     {
         string GenerateReceipt(Order order);
     }

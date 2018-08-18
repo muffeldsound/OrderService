@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderService.RecieptProviders
+namespace OrderService.ReceiptProviders
 {
-    public class JsonReciept : IReciept
+    public class JsonReceipt : IReceipt
     {
         public string GenerateReceipt(Order order)
         {

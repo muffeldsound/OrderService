@@ -29,8 +29,8 @@ namespace OrderService
 
         public string GenerateReceipt(string format)
         {
-            IReciept reciept = RecieptFabric.CreateRecieptProvider(format);
-            return reciept.GenerateReceipt(this);
+            IReceipt receipt = ReceiptFabric.CreateReceiptProvider(format);
+            return receipt.GenerateReceipt(this);
 
         }
 

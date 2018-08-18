@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderService
+namespace OrderService.ReceiptProviders
 {
-    public class HtmlReciept : IReciept
+    public class HtmlReceipt : IReceipt
     {
         public string GenerateReceipt(Order order)
         {
