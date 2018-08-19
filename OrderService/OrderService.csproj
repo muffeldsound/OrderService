@@ -43,11 +43,13 @@
     <Compile Include="Contracts\IReceipt.cs" />
     <Compile Include="FileFormats.cs" />
     <Compile Include="PriceCalculator.cs" />
+    <Compile Include="Prices.cs" />
     <Compile Include="ReceiptFabric.cs" />
+    <Compile Include="ReceiptGenerator.cs" />
     <Compile Include="ReceiptProviders\HtmlReceipt.cs" />
-    <Compile Include="OrderLine.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Models\OrderLine.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptProviders\JsonReceipt.cs" />
     <Compile Include="ReceiptProviders\TextReciept.cs" />

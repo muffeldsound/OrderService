@@ -12,25 +12,28 @@ namespace OrderService.ReceiptProviders
         public string GenerateReceipt(Order order)
         {
             var totalAmount = 0d;
-            var result = new StringBuilder("{" + $"    order-receipt-for: '{order.Company}',");
+            var result = new StringBuilder("{" + $"\"order-receipt-for\":\"{order.Company}\",");
             if (order.OrderLines.Any())
             {
-                result.Append("{");
+                result.Append("\"orderlines\":[");
                 totalAmount = PriceCalculator.CalculateTotal(order,
                                                         (line, amount) => {
-                                                            result.Append("quantity:");
-                                                            result.Append(line.Quantity);
-                                                            result.Append($",product-type: {line.Product.ProductType},");
-                                                            result.Append("product:{");
-                                                            result.Append($"name: {line.Product.ProductName}, price: {amount:C}");
-                                                            result.Append("}"); });
+                                                            result.Append("{\"quantity\":");
+                                                            result.Append($"\"{line.Quantity}\"");
+                                                            result.Append($",\"product-type\":");
+                                                            result.Append($"\"{line.Product.ProductType}\",");
+                                                            result.Append("\"product\":{");
+                                                            result.Append($"\"name\":\"{line.Product.ProductName}\",");
+                                                            result.Append($"\"price\": \"{amount:C}\"");
+                                                            result.Append("}},"); }
+                                                        );
 
-                result.Append("}");
+                result.Insert(result.Length-1, "]", 1);
             }
-            result.Append($"    subtotal: {totalAmount:C},");
+            result.Append($"\"subtotal\": \"{totalAmount:C}\",");
             var totalTax = totalAmount * Product.Prices.TaxRate;
-            result.Append($"    mva: {totalTax:C},");
-            result.Append($"    total: {(totalAmount + totalTax):C}");
+            result.Append($"\"mva\":\"{totalTax:C}\",");
+            result.Append($"\"total\":\"{(totalAmount + totalTax):C}\"");
             result.Append("}");
             return result.ToString();
         }

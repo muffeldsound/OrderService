@@ -27,12 +27,5 @@ namespace OrderService
             get { return _orderLines; }
         }
 
-        public string GenerateReceipt(FileFormat format)
-        {
-            IReceipt receipt = ReceiptProviderFabric.CreateReceiptProvider(format);
-            return receipt.GenerateReceipt(this);
-
-        }
-
     }
 }
