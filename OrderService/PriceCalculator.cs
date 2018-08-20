@@ -8,7 +8,7 @@ namespace OrderService
 {
     public class PriceCalculator
     {
-        public static double CalculateTotal(Order order, Action<OrderLine, double> lineFunction)
+        public static double CalculateTotal(Order order, Action<OrderLine, double> productPriceCalculatedCallback)
         {
             double totalAmount = 0d;
             foreach (var line in order.OrderLines)
@@ -23,7 +23,7 @@ namespace OrderService
                         thisAmount += ((double)line.Product.Price).VolumnDiscount(line, 3, Percentage.Twenty);
                         break;
                 }
-                lineFunction(line, thisAmount);
+                productPriceCalculatedCallback(line, thisAmount);
                 totalAmount += thisAmount;
             }
             return totalAmount;
