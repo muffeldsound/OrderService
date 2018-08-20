@@ -2,7 +2,7 @@
 {
     public static class Discount
     {
-        public static double VolumnDiscount(this double amount, OrderLine line, int quantityLimit, double percentage)
+        public static double VolumeDiscount(this double amount, OrderLine line, int quantityLimit, double percentage)
         {
             return line.Quantity
                 * line.Product.Price
