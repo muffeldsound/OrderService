@@ -17,10 +17,10 @@ namespace OrderService
                 switch (line.Product.Price)
                 {
                     case Product.Prices.OneThousand:
-                        thisAmount += CalculateProductPrice(line, 5, Percentage.Ten);
+                        thisAmount += ((double)line.Product.Price).VolumnDiscount(line, 5, Percentage.Ten);
                         break;
                     case Product.Prices.TwoThousand:
-                        thisAmount += CalculateProductPrice(line, 3, Percentage.Twenty);
+                        thisAmount += ((double)line.Product.Price).VolumnDiscount(line, 3, Percentage.Twenty);
                         break;
                 }
                 lineFunction(line, thisAmount);

@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptProviders\JsonReceipt.cs" />
     <Compile Include="ReceiptProviders\TextReciept.cs" />
+    <Compile Include="Extenders\DiscountExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
