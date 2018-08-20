@@ -17,22 +17,27 @@ namespace OrderService
                 switch (line.Product.Price)
                 {
                     case Product.Prices.OneThousand:
-                        if (line.Quantity >= 5)
-                            thisAmount += line.Quantity * line.Product.Price * .9d;
-                        else
-                            thisAmount += line.Quantity * line.Product.Price;
+                        thisAmount += CalculateProductPrice(line, 5, Percentage.Ten);
                         break;
                     case Product.Prices.TwoThousand:
-                        if (line.Quantity >= 3)
-                            thisAmount += line.Quantity * line.Product.Price * .8d;
-                        else
-                            thisAmount += line.Quantity * line.Product.Price;
+                        thisAmount += CalculateProductPrice(line, 3, Percentage.Twenty);
                         break;
                 }
                 lineFunction(line, thisAmount);
                 totalAmount += thisAmount;
             }
             return totalAmount;
+        }
+
+        private static double CalculateProductPrice(OrderLine line, int quantityLimit, double percentage )
+        {
+            return line.Quantity 
+                * line.Product.Price 
+                * (
+                    (line.Quantity >= quantityLimit)
+                    ? percentage 
+                    : 1
+                   );
         }
     }
 }

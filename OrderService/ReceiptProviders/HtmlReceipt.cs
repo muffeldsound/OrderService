@@ -22,7 +22,7 @@ namespace OrderService.ReceiptProviders
                 result.Append("</ul>");
             }
             result.Append($"<h3>Subtotal: {totalAmount:C}</h3>");
-            var totalTax = totalAmount * Product.Prices.TaxRate;
+            var totalTax = totalAmount * Rates.Tax;
             result.Append($"<h3>MVA: {totalTax:C}</h3>");
             result.Append($"<h2>Total: {(totalAmount + totalTax):C}</h2>");
             result.Append("</body></html>");

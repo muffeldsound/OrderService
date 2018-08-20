@@ -31,7 +31,7 @@ namespace OrderService.ReceiptProviders
                 result.Insert(result.Length-1, "]", 1);
             }
             result.Append($"\"subtotal\": \"{totalAmount:C}\",");
-            var totalTax = totalAmount * Product.Prices.TaxRate;
+            var totalTax = totalAmount * Rates.Tax;
             result.Append($"\"mva\":\"{totalTax:C}\",");
             result.Append($"\"total\":\"{(totalAmount + totalTax):C}\"");
             result.Append("}");

@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="Contracts\IReceipt.cs" />
     <Compile Include="FileFormats.cs" />
+    <Compile Include="Values\Percentage.cs" />
     <Compile Include="PriceCalculator.cs" />
-    <Compile Include="Prices.cs" />
+    <Compile Include="Values\Prices.cs" />
+    <Compile Include="Values\Rates.cs" />
     <Compile Include="ReceiptFabric.cs" />
     <Compile Include="ReceiptGenerator.cs" />
     <Compile Include="ReceiptProviders\HtmlReceipt.cs" />

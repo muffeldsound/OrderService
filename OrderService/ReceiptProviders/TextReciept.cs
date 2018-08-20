@@ -16,7 +16,7 @@ namespace OrderService.ReceiptProviders
                         (line, amount) => result.AppendLine(
                         $"\t{line.Quantity} x {line.Product.ProductType} {line.Product.ProductName} {line.Quantity} = {amount:C}"));
             result.AppendLine($"Subtotal: {totalAmount:C}");
-            var totalTax = totalAmount * Product.Prices.TaxRate;
+            var totalTax = totalAmount * Rates.Tax;
             result.AppendLine($"MVA: {totalTax:C}");
             result.Append($"Total: {(totalAmount + totalTax):C}");
             return result.ToString();
