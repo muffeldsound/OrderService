@@ -18,11 +18,6 @@ namespace OrderService
             _fileFormat = fileFormat;
         }
 
-        public string Generate()
-        {
-            IReceipt receipt = ReceiptProviderFabric.CreateReceiptProvider(_fileFormat);
-            return receipt.GenerateReceipt(_order);
-
-        }
+        public string Receipt => ReceiptProviderFabric.CreateReceiptProvider(_fileFormat).GenerateReceipt(_order);
     }
 }
