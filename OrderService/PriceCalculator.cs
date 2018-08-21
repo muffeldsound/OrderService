@@ -13,8 +13,7 @@ namespace OrderService
             double totalAmount = 0d;
             foreach (var line in orders)
             {
-                var thisAmount = 0d;
-                thisAmount = CalculateAmount(line);
+                var thisAmount = CalculateAmount(line);
                 productPriceCalculatedCallback(line, thisAmount);
                 totalAmount += thisAmount;
             }
