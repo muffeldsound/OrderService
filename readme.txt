@@ -13,7 +13,7 @@ Refactor the code so that it can survive these changes.
 * Your code should trend towards being SOLID.
 * You should be confident that it works. 
 * You should be comfortable the next developer will easily understand how to work with it.
-* We use [NUnit3](http://www.nunit.org) and [FakeItEasy](https://fakeiteasy.github.io/) at Waypoint. References have been added using NuGet.
+* We use [NUnit3](http://www.nunit.org) and [FakeItEasy](https://fakeiteasy.github.io/). References have been added using NuGet.
 
 Please note. There is no right or wrong solution(s) for this task. 
 Show us what you can do and we will discuss your refactoring choices during the technical interview. 
