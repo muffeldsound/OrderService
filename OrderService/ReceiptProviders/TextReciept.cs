@@ -12,7 +12,7 @@ namespace OrderService.ReceiptProviders
         public string GenerateReceipt(Order order)
         {
             var result = new StringBuilder($"Order receipt for '{order.Company}'{Environment.NewLine}");
-            var totalAmount = PriceCalculator.CalculateTotal(order, 
+            var totalAmount = PriceCalculator.CalculateTotal(order.OrderLines, 
                         (line, amount) => result.AppendLine(
                         $"\t{line.Quantity} x {line.Product.ProductType} {line.Product.ProductName} {line.Quantity} = {amount:C}"));
             result.AppendLine($"Subtotal: {totalAmount:C}");

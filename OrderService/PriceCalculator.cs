@@ -8,25 +8,33 @@ namespace OrderService
 {
     public class PriceCalculator
     {
-        public static double CalculateTotal(Order order, Action<OrderLine, double> productPriceCalculatedCallback)
+        public static double CalculateTotal(IList<OrderLine> orders, Action<OrderLine, double> productPriceCalculatedCallback)
         {
             double totalAmount = 0d;
-            foreach (var line in order.OrderLines)
+            foreach (var line in orders)
             {
                 var thisAmount = 0d;
-                switch (line.Product.Price)
-                {
-                    case Product.Prices.OneThousand:
-                        thisAmount += ((double)line.Product.Price).VolumeDiscount(line, 5, Percentage.Ten);
-                        break;
-                    case Product.Prices.TwoThousand:
-                        thisAmount += ((double)line.Product.Price).VolumeDiscount(line, 3, Percentage.Twenty);
-                        break;
-                }
+                thisAmount = CalculateAmount(line);
                 productPriceCalculatedCallback(line, thisAmount);
                 totalAmount += thisAmount;
             }
             return totalAmount;
+        }
+
+        private static double CalculateAmount(OrderLine line)
+        {
+            var thisAmount = 0d;
+            switch (line.Product.Price)
+            {
+                case Product.Prices.OneThousand:
+                    thisAmount += ((double)line.Product.Price).VolumeDiscount(line, 5, Percentage.Ten);
+                    break;
+                case Product.Prices.TwoThousand:
+                    thisAmount += ((double)line.Product.Price).VolumeDiscount(line, 3, Percentage.Twenty);
+                    break;
+            }
+
+            return thisAmount;
         }
 
         private static double CalculateProductPrice(OrderLine line, int quantityLimit, double percentage )

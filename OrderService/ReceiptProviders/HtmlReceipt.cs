@@ -16,7 +16,7 @@ namespace OrderService.ReceiptProviders
             if (order.OrderLines.Any())
             {
                 result.Append("<ul>");
-                totalAmount = PriceCalculator.CalculateTotal(order,
+                totalAmount = PriceCalculator.CalculateTotal(order.OrderLines,
                                                                 (line, amount) => result.Append(
                                                                 $"<li>{line.Quantity} x {line.Product.ProductType} {line.Product.ProductName} = {amount:C}</li>"));
                 result.Append("</ul>");

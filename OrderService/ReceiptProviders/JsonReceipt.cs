@@ -16,7 +16,7 @@ namespace OrderService.ReceiptProviders
             if (order.OrderLines.Any())
             {
                 result.Append("\"orderlines\":[");
-                totalAmount = PriceCalculator.CalculateTotal(order,
+                totalAmount = PriceCalculator.CalculateTotal(order.OrderLines,
                                                         (line, amount) => {
                                                             result.Append("{\"quantity\":");
                                                             result.Append($"\"{line.Quantity}\"");
